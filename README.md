@@ -35,9 +35,18 @@
 
    In [5]: reader.read().compute()
    <numpy array output, snipped>
+
+   In [6]: reader.close()
    ```
 
-   And try a TIFF series and stack as well.
+   Use the reader as a context manager.
+
+   ```py
+   In [7]: with tifffile_reader.TIFFReader('example_data/coffee.tif') as reader:
+      ...:     subsection = reader.read()[0, 0].compute()
+   ```
+
+   Try a TIFF series and stack as well.
 
    ```py
    In [3]: tifffile_reader.TIFFReader('example_data/series/*.tif').read().shape
