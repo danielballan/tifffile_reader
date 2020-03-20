@@ -6,6 +6,6 @@ setup(
     packages=['tifffile_reader'],
     entry_points={
         'TBD.readers':
-            ['tiff = tifffile_reader:TIFFReader']},
+            ['image/tiff = tifffile_reader:TIFFReader']},
     install_requires=['dask[array]', 'tifffile'],
 )
